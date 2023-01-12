@@ -5,5 +5,5 @@ project(cpp)
 
 add_subdirectory(lib/Catch2-3.2.1)
 
-add_executable(istringstream_tests istringstream_tests.cpp)
-target_link_libraries(istringstream_tests PRIVATE Catch2::Catch2WithMain)
+add_executable(getline getline.cpp)
+target_link_libraries(getline PRIVATE Catch2::Catch2WithMain)

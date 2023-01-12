@@ -1,4 +1,4 @@
-// A use case for istringstreams is to process files with relevant blank lines.
+// A use case for getline is to process files with relevant blank lines.
 // For example in Problem 1 of AoC 2022, the input is given as sets of weights separated by blank lines.
 //
 // Example:
@@ -7,8 +7,12 @@
 //
 //   2
 // Here, the first elf has two items and the second has one item.
+//
+// Without relevant newlines, it would be simple to read from an istream into an int.
+// The relevant newlines make this less straightforward.
 // By default reading from an istream to an int discards whitespace.
-// Passing the istream into std::noskipws disables this behavior.
+// Passing the istream into noskipws (i.e. is >> std::noskipws) disables this behavior but leads to tricky code to handle the blank line case.
+// In this example, we use getline as a blank line detector before further processing.
 
 #include "catch2/catch_test_macros.hpp"
 
@@ -16,8 +20,8 @@
 #include <sstream>
 
 /// @brief Put line-separated integers into a vector until a blank line is encountered.
-/// @param is The input stream.
-/// @param[out] v The vector.
+/// @param[inout] is The input stream we read integers from.
+/// @param[out] v The vector we clear and put the integers into.
 /// @return The passed input stream.
 std::istream& operator>>(std::istream& is, std::vector<int>& v) {
     v.clear();
