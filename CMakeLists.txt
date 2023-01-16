@@ -7,3 +7,7 @@ add_subdirectory(lib/Catch2-3.2.1)
 
 add_executable(getline getline.cpp)
 target_link_libraries(getline PRIVATE Catch2::Catch2WithMain)
+
+add_executable(mapcontains mapcontains.cpp)
+target_link_libraries(mapcontains PRIVATE Catch2::Catch2WithMain)
+set_property(TARGET mapcontains PROPERTY CXX_STANDARD 20)
