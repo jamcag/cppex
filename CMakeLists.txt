@@ -15,3 +15,6 @@ set_property(TARGET mapcontains PROPERTY CXX_STANDARD 20)
 add_executable(accumulate accumulate.cpp)
 target_link_libraries(accumulate)
 set_property(TARGET accumulate PROPERTY CXX_STANDARD 20)
+
+add_executable(thread_hello thread_hello.cpp)
+set_property(TARGET accumulate thread_hello CXX_STANDARD 20)
