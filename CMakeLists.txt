@@ -18,3 +18,6 @@ set_property(TARGET accumulate PROPERTY CXX_STANDARD 20)
 
 add_executable(thread_hello thread_hello.cpp)
 set_property(TARGET accumulate thread_hello CXX_STANDARD 20)
+
+add_executable(overwrite overwrite.cpp)
+set_property(TARGET overwrite overwrite CXX_STANDARD 20)
