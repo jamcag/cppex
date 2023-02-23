@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 project(cpp)
 
+set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory(lib/Catch2-3.2.1)
 
@@ -10,14 +11,12 @@ target_link_libraries(getline PRIVATE Catch2::Catch2WithMain)
 
 add_executable(mapcontains mapcontains.cpp)
 target_link_libraries(mapcontains PRIVATE Catch2::Catch2WithMain)
-set_property(TARGET mapcontains PROPERTY CXX_STANDARD 20)
 
 add_executable(accumulate accumulate.cpp)
 target_link_libraries(accumulate)
-set_property(TARGET accumulate PROPERTY CXX_STANDARD 20)
 
 add_executable(thread_hello thread_hello.cpp)
-set_property(TARGET accumulate thread_hello CXX_STANDARD 20)
 
 add_executable(overwrite overwrite.cpp)
-set_property(TARGET overwrite overwrite CXX_STANDARD 20)
+
+add_executable(user_defined_literals user_defined_literals.cpp)
