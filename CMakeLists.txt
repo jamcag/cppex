@@ -20,3 +20,5 @@ add_executable(thread_hello thread_hello.cpp)
 add_executable(overwrite overwrite.cpp)
 
 add_executable(user_defined_literals user_defined_literals.cpp)
+
+add_executable(lower_bound lower_bound.cpp)
